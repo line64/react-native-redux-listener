@@ -10,4 +10,6 @@ export default (store) => {
   };
 
   AppState.addEventListener('change', listener);
+
+  listener();
 };
