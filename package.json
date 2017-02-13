@@ -1,6 +1,6 @@
 {
   "name": "react-native-redux-listener",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Redux store enhancer to dispatch common React Native events",
   "main": "lib/index.js",
   "scripts": {
