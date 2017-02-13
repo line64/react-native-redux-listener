@@ -1,5 +1,8 @@
 # react-native-redux-listener
 Redux store enhancer to dispatch common React Native events
+```
+yarn add react-native-redux-listener
+```
 
 ## Motivation
 *React Native* provides a lot of information about the app's environment through event
@@ -20,7 +23,7 @@ be handled by the reducers of your app.
 - (WIP) handle events from some well-known third-party libs (eg: device-info, orientation)
 
 ## Usage
-Add the `reactNativeListener` store enhancer in your store creation procedure:
+Add the store enhancer in your store creation procedure:
 ```js
 import { createStore, applyMiddleware, compose } from 'redux';
 import { setupRNListener } from 'react-native-redux-listener';
@@ -54,7 +57,7 @@ export default function (state = initialState, action = {}) {
     case APP_STATE_CHANGED:
       return {
         ...state,
-        appIsActive: (action.newState == 'active'),
+        appIsActive: (action.currentState == 'active'),
       };
     case NET_INFO_CHANGED:
       return {
@@ -75,7 +78,7 @@ Dispatched each time the app changes its current state (active, background, etc)
 ```
 {
   type: APP_STATE_CHANGED,
-  newState: string,
+  currentState: string,
 }
 ```
 
@@ -87,3 +90,6 @@ Dispatched each time the app changes its connection status (online/offline)
   isConnected: bool
 }
 ```
+
+### More to come...
+We'll add more actions for the other features stated above. Pull Requests welcome!
