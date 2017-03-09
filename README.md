@@ -22,6 +22,17 @@ be handled by the reducers of your app.
 - opt-out of events that you don't need
 - (WIP) handle events from some well-known third-party libs (eg: device-info, orientation)
 
+## Android Setup
+
+Add the following line to your app's AndroidManifest.xml:
+```
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+## iOS Setup
+
+No further steps required.
+
 ## Usage
 Add the store enhancer in your store creation procedure:
 ```js
